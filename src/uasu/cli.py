@@ -30,7 +30,7 @@ def main(source_file, bucket_name, service_account_key_file, link_expiration_day
     print(url)
 
 
-if __name__ == '__main__':
+def run():
     parser = argparse.ArgumentParser(description='Uploads files to Google Cloud Storage (GCS) and generates a time-limited signed URL.')
     parser.add_argument('source_file', type=str, help='the path to the file to upload')
     parser.add_argument('-b', '--bucket-name', type=str, help='the name of the GCS bucket where the file will be uploaded')
@@ -39,3 +39,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     main(args.source_file, args.bucket_name, args.service_account_key_file, args.link_expiration_days)
+
+
+if __name__ == '__main__':
+    run()
